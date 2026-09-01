@@ -34,8 +34,8 @@ export function Projects() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-[var(--color-bg)]" id="projects">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="bg-[var(--color-bg)]" style={{ padding: 'var(--section-padding) 0' }} id="projects">
+      <div className="mx-auto" style={{ maxWidth: 'var(--container-max)', paddingInline: 'var(--page-padding)' }}>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,10 @@ export function Projects() {
           <p className="font-mono text-sm tracking-widest text-[var(--color-accent)] font-semibold uppercase mb-4">
             03 — SELECTED WORK
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-[var(--color-heading)] max-w-3xl leading-tight">
+          <h2 
+            className="font-bold tracking-tighter text-[var(--color-heading)] max-w-3xl leading-tight"
+            style={{ fontSize: 'var(--section-heading)', textWrap: 'balance' }}
+          >
             THINGS <br />
             I'VE BUILT.
           </h2>
@@ -115,12 +118,11 @@ export function Projects() {
                     </span>
                     <span className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
                   </MagneticButton>
-
                   <MagneticButton 
                     href={project.github} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="group inline-flex items-center gap-2 border border-[var(--color-graphite)]/20 bg-[var(--color-white)] text-[var(--color-heading)] px-5 py-2.5 font-semibold tracking-widest text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-[0_4px_20px_rgba(176,141,87,0.15)] ml-auto sm:ml-0"
+                    className="group inline-flex items-center gap-2 border border-[var(--color-graphite)]/20 bg-[var(--color-white)] text-[var(--color-heading)] px-5 py-2.5 font-semibold tracking-widest text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-[0_4px_20px_rgba(176,141,87,0.15)]"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-heading)] group-hover:text-[var(--color-accent)] transition-colors"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                     GITHUB
@@ -136,7 +138,7 @@ export function Projects() {
                 transition={{ duration: 0.8 }}
                 className={`lg:col-span-7 h-full w-full ${index % 2 === 1 ? 'lg:order-1' : ''}`}
               >
-                <div className="w-full h-full group-hover/project:shadow-[0_30px_80px_rgba(0,0,0,0.04)] group-hover/project:border-[var(--color-accent)]/30 transition-all duration-700 rounded-sm">
+                <div className="w-full h-full max-w-full overflow-hidden group-hover/project:shadow-[0_30px_80px_rgba(0,0,0,0.04)] group-hover/project:border-[var(--color-accent)]/30 transition-all duration-700 rounded-sm">
                   <project.Visual />
                 </div>
               </motion.div>

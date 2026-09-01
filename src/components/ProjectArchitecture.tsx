@@ -40,23 +40,24 @@ export function ServerlessArchitecture() {
           </div>
         ))}
 
-        {!shouldReduceMotion && (
-          <div className="absolute -right-12 top-1/2 -translate-y-1/2 font-mono text-[10px] tracking-widest text-[var(--color-accent)] font-semibold rotate-90 origin-left hidden md:block">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={statusIndex}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 10 }}
-                transition={{ duration: 0.2 }}
-                className="inline-block"
-              >
-                {statuses[statusIndex]}
-              </motion.span>
-            </AnimatePresence>
-          </div>
-        )}
       </div>
+
+      {!shouldReduceMotion && (
+        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 font-mono text-[10px] tracking-widest text-[var(--color-accent)] font-semibold">
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={statusIndex}
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.2 }}
+              className="inline-block"
+            >
+              {statuses[statusIndex]}
+            </motion.span>
+          </AnimatePresence>
+        </div>
+      )}
     </div>
   );
 }
@@ -99,23 +100,24 @@ export function DisasterRecoveryWorkflow() {
             )}
           </div>
         ))}
-        {!shouldReduceMotion && (
-          <div className="absolute -right-8 bottom-4 font-mono text-[10px] tracking-widest text-[var(--color-accent)] font-semibold hidden md:block">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={statusIndex}
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.3 }}
-                className="inline-block"
-              >
-                {statuses[statusIndex]}
-              </motion.span>
-            </AnimatePresence>
-          </div>
-        )}
       </div>
+
+      {!shouldReduceMotion && (
+        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 font-mono text-[10px] tracking-widest text-[var(--color-accent)] font-semibold">
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={statusIndex}
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.3 }}
+              className="inline-block"
+            >
+              {statuses[statusIndex]}
+            </motion.span>
+          </AnimatePresence>
+        </div>
+      )}
     </div>
   );
 }

@@ -51,7 +51,7 @@ export function Navbar() {
         scrolled ? 'bg-[var(--color-white)]/95 backdrop-blur-md border-b border-[var(--color-soft-border)] shadow-[0_4px_30px_rgba(0,0,0,0.02)] py-4' : 'bg-transparent py-6'
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="mx-auto flex items-center justify-between" style={{ maxWidth: 'var(--container-max)', paddingInline: 'var(--page-padding)' }}>
         <a href="#" className="text-xl font-bold tracking-tighter text-[var(--color-heading)]">
           ABINAYA P.
         </a>

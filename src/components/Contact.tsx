@@ -20,8 +20,8 @@ export function Contact() {
   }, [isVisible]);
 
   return (
-    <section className="py-32 md:py-48 bg-[var(--color-graphite)] relative overflow-hidden" id="contact">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+    <section className="bg-[var(--color-graphite)] relative overflow-hidden" style={{ padding: 'var(--section-padding) 0' }} id="contact">
+      <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10" style={{ maxWidth: 'var(--container-max)', paddingInline: 'var(--page-padding)' }}>
         
         <motion.div 
           initial="hidden"
@@ -42,7 +42,8 @@ export function Contact() {
           </motion.p>
           <motion.h2 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
-            className="text-5xl md:text-7xl font-bold tracking-tighter text-[var(--color-white)] leading-[1.1]"
+            className="font-bold tracking-tighter text-[var(--color-white)] leading-[1.1]"
+            style={{ fontSize: 'clamp(2.5rem, 7vw, 5.5rem)', textWrap: 'balance' }}
           >
             HAVE SOMETHING <br />
             WORTH BUILDING?
@@ -56,15 +57,15 @@ export function Contact() {
 
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
-            className="flex flex-wrap gap-4 pt-8"
+            className="flex flex-col sm:flex-row flex-wrap gap-4 pt-8"
           >
-            <MagneticButton href="mailto:abinayalmmhs.123@gmail.com" className="bg-[var(--color-white)] text-[var(--color-graphite)] px-8 py-4 font-semibold tracking-widest text-sm hover:bg-[var(--color-accent)] hover:text-[var(--color-white)] hover:-translate-y-1 transition-all border border-transparent">
+            <MagneticButton href="mailto:abinayalmmhs.123@gmail.com" className="w-full sm:w-auto bg-[var(--color-white)] text-[var(--color-graphite)] px-8 py-4 font-semibold tracking-widest text-sm hover:bg-[var(--color-accent)] hover:text-[var(--color-white)] hover:-translate-y-1 transition-all border border-transparent flex justify-center items-center">
               EMAIL ME ↗
             </MagneticButton>
-            <MagneticButton href="https://www.linkedin.com/in/abinaya-p-16a073337/" target="_blank" rel="noreferrer" className="border border-[var(--color-secondary)] text-[var(--color-white)] px-8 py-4 font-semibold tracking-widest text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all">
+            <MagneticButton href="https://www.linkedin.com/in/abinaya-p-16a073337/" target="_blank" rel="noreferrer" className="w-full sm:w-auto border border-[var(--color-secondary)] text-[var(--color-white)] px-8 py-4 font-semibold tracking-widest text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all flex justify-center items-center">
               LINKEDIN ↗
             </MagneticButton>
-            <MagneticButton href="https://github.com/Abinaya1809" target="_blank" rel="noreferrer" className="border border-[var(--color-secondary)] text-[var(--color-white)] px-8 py-4 font-semibold tracking-widest text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all">
+            <MagneticButton href="https://github.com/Abinaya1809" target="_blank" rel="noreferrer" className="w-full sm:w-auto border border-[var(--color-secondary)] text-[var(--color-white)] px-8 py-4 font-semibold tracking-widest text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all flex justify-center items-center">
               GITHUB ↗
             </MagneticButton>
           </motion.div>

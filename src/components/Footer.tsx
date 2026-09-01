@@ -1,10 +1,10 @@
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--color-dark-surface)] pt-16 pb-8 bg-[var(--color-graphite)] relative">
+    <footer className="border-t border-[var(--color-dark-surface)] pb-8 bg-[var(--color-graphite)] relative" style={{ paddingTop: 'var(--section-padding)' }}>
       <div className="absolute top-0 left-12 w-8 h-[2px] bg-[var(--color-accent)]" />
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+      <div className="mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12" style={{ maxWidth: 'var(--container-max)', paddingInline: 'var(--page-padding)' }}>
         <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-[var(--color-white)]">ABINAYA P.</h2>
+          <h2 className="font-bold tracking-tighter text-[var(--color-white)]" style={{ fontSize: 'var(--section-heading)' }}>ABINAYA P.</h2>
           <div className="space-y-1 text-[var(--color-border)]">
             <p className="font-medium">B.Tech Information Technology</p>
             <p>Software Developer</p>

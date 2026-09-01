@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 export function About() {
   return (
-    <section className="py-24 md:py-32 bg-[var(--color-white)] border-y border-[var(--color-soft-border)]" id="about">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col">
+    <section className="bg-[var(--color-white)] border-y border-[var(--color-soft-border)]" style={{ padding: 'var(--section-padding) 0' }} id="about">
+      <div className="mx-auto flex flex-col" style={{ maxWidth: 'var(--container-max)', paddingInline: 'var(--page-padding)' }}>
         
         {/* TOP: Label & Headline */}
         <motion.div 
@@ -15,7 +15,10 @@ export function About() {
           <p className="font-mono text-sm tracking-widest text-[var(--color-accent)] font-semibold uppercase mb-6">
             01 — ABOUT
           </p>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-[var(--color-heading)] max-w-4xl leading-[1.1]">
+          <h2 
+            className="font-bold tracking-tighter text-[var(--color-heading)] max-w-4xl leading-[1.1]"
+            style={{ fontSize: 'var(--section-heading)', textWrap: 'balance' }}
+          >
             AN IT STUDENT <br className="hidden md:block"/>
             WHO LIKES TO BUILD.
           </h2>
@@ -29,7 +32,8 @@ export function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full aspect-[3/4] relative overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg)] group"
+            className="aspect-[3/4] relative overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg)] group"
+            style={{ width: 'min(100%, 350px)', height: 'auto' }}
           >
             <img 
               src="/src/assets/profile.jpg" 
@@ -57,7 +61,8 @@ export function About() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
               }}
-              className="space-y-6 text-base md:text-lg text-[var(--color-secondary)] leading-relaxed font-light mb-12"
+              className="space-y-6 text-[var(--color-secondary)] leading-relaxed font-light mb-12"
+              style={{ fontSize: 'var(--body-text)' }}
             >
               <p>
                 Information Technology student with basic knowledge in programming, particularly Java. Experienced in developing academic projects including a web-based inventory management system.
@@ -73,7 +78,8 @@ export function About() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
               }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[var(--color-heading)] leading-[1.1] mb-16"
+              className="font-bold tracking-tighter text-[var(--color-heading)] leading-[1.1] mb-16"
+              style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)' }}
             >
               FOCUSED ON SCALABLE SOFTWARE AND CLOUD ARCHITECTURE.
             </motion.h3>

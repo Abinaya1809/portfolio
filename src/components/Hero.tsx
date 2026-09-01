@@ -14,7 +14,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden" id="hero">
+    <section className="relative min-h-[100svh] flex items-center pt-32 pb-12 overflow-hidden" id="hero">
       {/* Subtle Animated Background Grid Parallax */}
       <motion.div 
         className="absolute inset-0 pointer-events-none opacity-40" 
@@ -32,7 +32,7 @@ export function Hero() {
         }}
       />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" style={{ maxWidth: 'var(--container-max)', paddingInline: 'var(--page-padding)' }}>
         <div className="lg:col-span-8 space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,10 @@ export function Hero() {
             <span>Software Developer</span>
           </motion.div>
           
-          <h1 className="text-[3.5rem] sm:text-7xl md:text-8xl lg:text-[6.5rem] font-bold tracking-tighter leading-[1.05] text-[var(--color-heading)] flex flex-col">
+          <h1 
+            className="font-bold tracking-tighter leading-[1.05] text-[var(--color-heading)] flex flex-col"
+            style={{ fontSize: 'var(--hero-heading)', textWrap: 'balance' }}
+          >
             <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -74,7 +77,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-xl text-[var(--color-secondary)] max-w-2xl font-light leading-relaxed"
+            className="text-[var(--color-secondary)] max-w-2xl font-light leading-relaxed"
+            style={{ fontSize: 'var(--body-text)' }}
           >
             Information Technology student exploring software development, cloud computing, serverless applications and modern web technologies.
           </motion.p>

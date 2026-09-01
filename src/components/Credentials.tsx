@@ -12,8 +12,8 @@ export function Credentials() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-[var(--color-bg)]" id="credentials">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="bg-[var(--color-bg)]" style={{ padding: 'var(--section-padding) 0' }} id="credentials">
+      <div className="mx-auto" style={{ maxWidth: 'var(--container-max)', paddingInline: 'var(--page-padding)' }}>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,10 @@ export function Credentials() {
           <p className="font-mono text-sm tracking-widest text-[var(--color-accent)] uppercase mb-4 font-semibold">
             05 — CREDENTIALS
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-[var(--color-heading)] max-w-3xl leading-tight">
+          <h2 
+            className="font-bold tracking-tighter text-[var(--color-heading)] max-w-3xl leading-tight"
+            style={{ fontSize: 'var(--section-heading)', textWrap: 'balance' }}
+          >
             CERTIFIED. <br />
             CURIOUS. <br />
             BUILDING.

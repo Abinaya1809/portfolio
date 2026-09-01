@@ -21,8 +21,24 @@
 }
 
 @layer base {
+  :root {
+    --page-padding: clamp(1rem, 5vw, 4rem);
+    --section-padding: clamp(4rem, 10vw, 10rem);
+    --hero-heading: clamp(2.75rem, 8vw, 8rem);
+    --section-heading: clamp(2.25rem, 5vw, 5rem);
+    --body-text: clamp(0.95rem, 1.2vw, 1.15rem);
+    --small-text: clamp(0.7rem, 0.8vw, 0.875rem);
+    --container-max: 1400px;
+  }
+
+  html, body, #root {
+    width: 100%;
+    max-width: 100vw;
+  }
+
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   body {
@@ -30,6 +46,7 @@
     color: var(--color-primary);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   
   ::selection {
