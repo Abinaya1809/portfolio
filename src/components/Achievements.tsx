@@ -50,8 +50,8 @@ export function Achievements() {
                 key={item.id}
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="group flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-8 border-b border-[var(--color-border-grey)] last:border-0 hover:bg-[var(--color-surface-grey)] transition-colors"
               >
                 <div className="font-mono text-sm text-[var(--color-muted-grey)] md:w-16 pt-1">

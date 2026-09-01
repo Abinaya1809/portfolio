@@ -35,10 +35,10 @@ export function Skills() {
           {skills.map((skill, i) => (
             <motion.div 
               key={skill.name}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="bg-[var(--color-black-main)] p-6 md:p-8 min-h-[200px] group hover:bg-[var(--color-surface-grey)] transition-colors duration-300 relative overflow-hidden flex flex-col justify-between"
             >
               <div>
