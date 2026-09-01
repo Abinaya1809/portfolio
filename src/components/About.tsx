@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import profileImg from '../assets/profile.jpg';
 
 export function About() {
+  const [imgError, setImgError] = useState(false);
   return (
     <section className="bg-[var(--color-white)] border-y border-[var(--color-soft-border)]" style={{ padding: 'var(--section-padding) 0' }} id="about">
       <div className="mx-auto flex flex-col" style={{ maxWidth: 'var(--container-max)', paddingInline: 'var(--page-padding)' }}>
@@ -32,14 +35,21 @@ export function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="aspect-[3/4] relative overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg)] group"
+            className="aspect-[3/4] relative overflow-hidden border border-[var(--color-border)] bg-[var(--color-bg)] group flex items-center justify-center"
             style={{ width: 'min(100%, 350px)', height: 'auto' }}
           >
-            <img 
-              src="/src/assets/profile.jpg" 
-              alt="Abinaya P" 
-              className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700" 
-            />
+            {imgError ? (
+              <div className="w-full h-full flex items-center justify-center bg-[var(--color-bg)] text-[var(--color-muted)] font-mono font-semibold tracking-widest text-sm">
+                ABINAYA P.
+              </div>
+            ) : (
+              <img 
+                src={profileImg} 
+                alt="Abinaya P" 
+                onError={() => setImgError(true)}
+                className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700" 
+              />
+            )}
             <div className="absolute inset-0 border-[8px] border-[var(--color-white)] pointer-events-none" />
           </motion.div>
 
