@@ -1,6 +1,7 @@
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Marquee } from './components/Marquee';
 import { About } from './components/About';
 import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
@@ -10,22 +11,14 @@ import { Achievements } from './components/Achievements';
 import { Interests } from './components/Interests';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { CustomCursor } from './components/CustomCursor';
+import { ScrollProgress } from './components/ScrollProgress';
 
 function App() {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
   return (
-    <div className="min-h-screen bg-[var(--color-near-black)] text-[var(--color-soft-white)] selection:bg-[var(--color-soft-white)] selection:text-[var(--color-near-black)]">
-      {/* Scroll Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-[var(--color-white-main)] origin-left z-[100]"
-        style={{ scaleX }}
-      />
+    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-primary)] selection:bg-[var(--color-accent)] selection:text-[var(--color-white)]">
+      <CustomCursor />
+      <ScrollProgress />
       
       <Navbar />
       <motion.main
@@ -34,6 +27,7 @@ function App() {
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
         <Hero />
+        <Marquee />
         <About />
         <Experience />
         <Projects />

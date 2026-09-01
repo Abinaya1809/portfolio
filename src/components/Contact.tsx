@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { MagneticButton } from './MagneticButton';
 
 export function Contact() {
   const [typedText, setTypedText] = useState('');
@@ -19,51 +20,67 @@ export function Contact() {
   }, [isVisible]);
 
   return (
-    <section className="py-32 md:py-48 bg-[var(--color-near-black)] relative overflow-hidden" id="contact">
+    <section className="py-32 md:py-48 bg-[var(--color-graphite)] relative overflow-hidden" id="contact">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
         
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           onViewportEnter={() => setIsVisible(true)}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } }
+          }}
           className="space-y-8"
         >
-          <p className="font-mono text-sm tracking-widest text-[var(--color-muted-grey)] uppercase">
+          <motion.p 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+            className="font-mono text-sm tracking-widest text-[var(--color-accent)] font-semibold uppercase"
+          >
             08 — CONTACT
-          </p>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-[var(--color-white-main)] leading-[1.1]">
+          </motion.p>
+          <motion.h2 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+            className="text-5xl md:text-7xl font-bold tracking-tighter text-[var(--color-white)] leading-[1.1]"
+          >
             HAVE SOMETHING <br />
             WORTH BUILDING?
-          </h2>
-          <p className="text-xl text-[var(--color-light-grey)] max-w-md font-light">
+          </motion.h2>
+          <motion.p 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+            className="text-xl text-[var(--color-border)] max-w-md font-light"
+          >
             Let's connect and talk about software, cloud, technology and new opportunities.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4 pt-8">
-            <a href="mailto:abinayalmmhs.123@gmail.com" className="bg-[var(--color-white-main)] text-[var(--color-near-black)] px-8 py-4 font-semibold tracking-wide hover:bg-[var(--color-soft-white)] hover:-translate-y-1 transition-all inline-flex items-center gap-2">
+          <motion.div 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+            className="flex flex-wrap gap-4 pt-8"
+          >
+            <MagneticButton href="mailto:abinayalmmhs.123@gmail.com" className="bg-[var(--color-white)] text-[var(--color-graphite)] px-8 py-4 font-semibold tracking-widest text-sm hover:bg-[var(--color-accent)] hover:text-[var(--color-white)] hover:-translate-y-1 transition-all border border-transparent">
               EMAIL ME ↗
-            </a>
-            <a href="#" className="border border-[var(--color-border-grey)] bg-[var(--color-dark-grey)] text-[var(--color-white-main)] px-8 py-4 font-semibold tracking-wide hover:bg-[var(--color-surface-grey)] hover:-translate-y-1 transition-all inline-flex items-center gap-2">
+            </MagneticButton>
+            <MagneticButton href="https://www.linkedin.com/in/abinaya-p-16a073337/" target="_blank" rel="noreferrer" className="border border-[var(--color-secondary)] text-[var(--color-white)] px-8 py-4 font-semibold tracking-widest text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all">
               LINKEDIN ↗
-            </a>
-            <a href="#" className="border border-[var(--color-border-grey)] bg-[var(--color-dark-grey)] text-[var(--color-white-main)] px-8 py-4 font-semibold tracking-wide hover:bg-[var(--color-surface-grey)] hover:-translate-y-1 transition-all inline-flex items-center gap-2">
+            </MagneticButton>
+            <MagneticButton href="https://github.com/Abinaya1809" target="_blank" rel="noreferrer" className="border border-[var(--color-secondary)] text-[var(--color-white)] px-8 py-4 font-semibold tracking-widest text-sm hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all">
               GITHUB ↗
-            </a>
-          </div>
+            </MagneticButton>
+          </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="flex items-center justify-center lg:justify-end"
         >
-          <div className="w-full max-w-md border border-[var(--color-border-grey)] bg-[var(--color-black-main)] p-6 min-h-[200px] shadow-2xl relative">
-            <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-white-main)]/20" />
-            <pre className="font-mono text-sm md:text-base text-[var(--color-light-grey)] whitespace-pre-wrap leading-relaxed">
+          <div className="w-full max-w-md border border-[var(--color-dark-surface)] bg-[var(--color-primary)] p-6 min-h-[200px] shadow-2xl relative">
+            <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-accent)]" />
+            <pre className="font-mono text-sm md:text-base text-[var(--color-border)] whitespace-pre-wrap leading-relaxed">
               {typedText}
-              <span className="animate-pulse text-[var(--color-white-main)]">_</span>
+              <span className="animate-pulse text-[var(--color-white)]">_</span>
             </pre>
           </div>
         </motion.div>

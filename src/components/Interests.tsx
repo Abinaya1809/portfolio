@@ -7,10 +7,10 @@ export function Interests() {
   ];
 
   return (
-    <section className="py-24 bg-[var(--color-black-main)] border-t border-b border-[var(--color-border-grey)]">
+    <section className="py-24 bg-[var(--color-bg)] border-t border-[var(--color-border)]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-4">
-          <p className="font-mono text-sm tracking-widest text-[var(--color-muted-grey)] uppercase">
+          <p className="font-mono text-sm tracking-widest text-[var(--color-accent)] font-semibold uppercase">
             07 — BEYOND CODE
           </p>
         </div>
@@ -24,21 +24,21 @@ export function Interests() {
               transition={{ delay: i * 0.1 }}
               className="group"
             >
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[var(--color-dark-grey)] group-hover:text-[var(--color-white-main)] transition-colors duration-500 cursor-default">
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-[var(--color-soft-border)] group-hover:text-[var(--color-heading)] transition-colors duration-500 cursor-default">
                 {interest.title}
               </h3>
               {interest.desc && (
-                <p className="mt-4 font-mono text-sm text-[var(--color-muted-grey)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-2 group-hover:translate-y-0">
+                <p className="mt-4 font-mono text-sm text-[var(--color-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-y-2 group-hover:translate-y-0">
                   {interest.desc}
                 </p>
               )}
             </motion.div>
           ))}
           
-          <div className="pt-8 flex gap-8 font-mono text-sm text-[var(--color-muted-grey)]">
+          <div className="pt-8 flex gap-8 font-mono text-sm font-semibold tracking-widest text-[var(--color-muted)]">
             <span>LANGUAGES:</span>
-            <span className="text-[var(--color-white-main)]">TAMIL</span>
-            <span className="text-[var(--color-white-main)]">ENGLISH</span>
+            <span className="text-[var(--color-primary)]">TAMIL</span>
+            <span className="text-[var(--color-primary)]">ENGLISH</span>
           </div>
         </div>
       </div>

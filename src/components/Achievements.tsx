@@ -23,7 +23,7 @@ export function Achievements() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-[var(--color-near-black)]" id="achievements">
+    <section className="py-24 md:py-32 bg-[var(--color-bg)]" id="achievements">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -31,50 +31,59 @@ export function Achievements() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="font-mono text-sm tracking-widest text-[var(--color-muted-grey)] uppercase mb-4">
+          <p className="font-mono text-sm tracking-widest text-[var(--color-accent)] font-semibold uppercase mb-4">
             06 — ACTIVITY
           </p>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-[var(--color-white-main)] max-w-3xl leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-[var(--color-heading)] max-w-3xl leading-tight">
             A FEW THINGS <br />
             I'VE DONE.
           </h2>
         </motion.div>
 
-        <div className="border border-[var(--color-border-grey)] bg-[var(--color-black-main)]">
-          <div className="border-b border-[var(--color-border-grey)] p-4 md:px-8 font-mono text-sm text-[var(--color-muted-grey)]">
+        <div className="border border-[var(--color-border)] bg-[var(--color-white)]">
+          <div className="border-b border-[var(--color-border)] p-4 md:px-8 font-mono text-xs tracking-widest font-semibold text-[var(--color-muted)]">
             ACTIVITY LOG
           </div>
-          <div className="flex flex-col">
-            {achievements.map((item, index) => (
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1 } }
+            }}
+            className="flex flex-col"
+          >
+            {achievements.map((item) => (
               <motion.div 
                 key={item.id}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-8 border-b border-[var(--color-border-grey)] last:border-0 hover:bg-[var(--color-surface-grey)] transition-colors"
+                variants={{
+                  hidden: { opacity: 0, x: -10 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+                }}
+                className="group flex flex-col md:flex-row gap-4 md:gap-8 p-6 md:p-8 border-b border-[var(--color-border)] last:border-0 hover:bg-[var(--color-bg)] transition-colors"
               >
-                <div className="font-mono text-sm text-[var(--color-muted-grey)] md:w-16 pt-1">
+                <div className="font-mono text-sm text-[var(--color-muted)] font-semibold md:w-16 pt-1 group-hover:text-[var(--color-accent)] transition-colors">
                   [{item.id}]
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-2">
-                    <h3 className="font-mono text-sm font-semibold tracking-widest text-[var(--color-white-main)] uppercase">
+                    <h3 className="font-mono text-xs font-semibold tracking-widest text-[var(--color-secondary)] uppercase">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-xl md:text-2xl text-[var(--color-white-main)] font-medium tracking-tight mb-2">
+                  <p className="text-xl md:text-2xl text-[var(--color-heading)] font-semibold tracking-tight mb-2 group-hover:text-[var(--color-accent)] transition-colors">
                     {item.description}
                   </p>
                   {item.context && (
-                    <p className="text-[var(--color-light-grey)] font-light">
+                    <p className="text-[var(--color-secondary)] font-medium">
                       {item.context}
                     </p>
                   )}
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

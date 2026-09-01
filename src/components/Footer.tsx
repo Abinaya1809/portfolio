@@ -1,26 +1,27 @@
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--color-border-grey)] pt-16 pb-8 bg-[var(--color-near-black)]">
+    <footer className="border-t border-[var(--color-dark-surface)] pt-16 pb-8 bg-[var(--color-graphite)] relative">
+      <div className="absolute top-0 left-12 w-8 h-[2px] bg-[var(--color-accent)]" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
         <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-[var(--color-soft-white)]">ABINAYA P.</h2>
-          <div className="space-y-1 text-[var(--color-muted-grey)]">
-            <p>B.Tech Information Technology</p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-[var(--color-white)]">ABINAYA P.</h2>
+          <div className="space-y-1 text-[var(--color-border)]">
+            <p className="font-medium">B.Tech Information Technology</p>
             <p>Software Developer</p>
-            <p className="mt-2 text-sm">Java · AWS · SQL · Web Development</p>
+            <p className="mt-2 text-sm text-[var(--color-muted)] font-mono tracking-widest">JAVA · AWS · SQL · WEB</p>
           </div>
         </div>
         
-        <div className="flex flex-col items-start md:items-end space-y-4 text-sm text-[var(--color-muted-grey)]">
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-[var(--color-white-main)] transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-[var(--color-white-main)] transition-colors">GitHub</a>
-            <a href="mailto:abinayalmmhs.123@gmail.com" className="hover:text-[var(--color-white-main)] transition-colors">Email</a>
+        <div className="flex flex-col items-start md:items-end space-y-4 text-sm text-[var(--color-muted)]">
+          <div className="flex gap-6 font-semibold tracking-widest text-xs">
+            <a href="https://www.linkedin.com/in/abinaya-p-16a073337/" target="_blank" rel="noreferrer" className="hover:text-[var(--color-accent)] transition-colors">LINKEDIN</a>
+            <a href="https://github.com/Abinaya1809" target="_blank" rel="noreferrer" className="hover:text-[var(--color-accent)] transition-colors">GITHUB</a>
+            <a href="mailto:abinayalmmhs.123@gmail.com" className="hover:text-[var(--color-accent)] transition-colors">EMAIL</a>
           </div>
-          <div className="flex gap-4">
-            <span>Tamil · English</span>
+          <div className="flex gap-4 font-mono">
+            <span>TAMIL · ENGLISH</span>
           </div>
-          <p>© 2026 Abinaya P.</p>
+          <p className="font-mono text-[var(--color-secondary)]">© 2026 Abinaya P.</p>
         </div>
       </div>
     </footer>
